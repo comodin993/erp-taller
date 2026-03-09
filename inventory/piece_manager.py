@@ -3,31 +3,47 @@ from config import DATA_DIR
 import uuid
 
 
-class ProductManager:
+class PieceManager:
 
     def __init__(self):
 
-        self.db = Database(DATA_DIR / "products.json")
+        self.db = Database(DATA_DIR / "pieces.json")
 
     def all(self):
+
         return self.db.load()
 
-    def create(self, name, brand, model):
+    def create(self, product_id, location):
 
-        products = self.db.load()
+        pieces = self.db.load()
 
-        product = {
+        piece = {
 
             "id": str(uuid.uuid4()),
-            "name": name,
-            "brand": brand,
-            "model": model,
-            "barcode": "",
-            "stock_min": 1
+            "product_id": product_id,
+            "location": location,
+            "condition": "",
+            "quality": "",
+            "despiece_id": ""
+
         }
 
-        products.append(product)
+        pieces.append(piece)
 
-        self.db.save(products)
+        self.db.save(pieces)
 
-        return product
+        return piece
+
+    def count_by_product(self, product_id):
+
+        pieces = self.db.load()
+
+        count = 0
+
+        for p in pieces:
+
+            if p["product_id"] == product_id:
+
+                count += 1
+
+        return count
