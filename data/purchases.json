@@ -1,14 +1,18 @@
 [
     {
         "product_id": "d806daf3-7183-4af0-b479-48f7fe9502a6",
-        "qty": 4
+        "qty": 7
     },
     {
         "product_id": "238033cb-d077-4b2c-a8da-6747d7bce26d",
-        "qty": 2
+        "qty": 3
     },
     {
         "product_id": "d7190439-f9a3-4e06-a2ff-041b9965cfa5",
         "qty": 3
+    },
+    {
+        "product_id": "9ebf6631-1b1e-4dca-868b-b95e7362340c",
+        "qty": 2
     }
 ]

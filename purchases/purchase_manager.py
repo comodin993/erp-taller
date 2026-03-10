@@ -1,36 +1,24 @@
-from core.database import Database
-from config import DATA_DIR
+from core.database import db
+from inventory.piece_manager import PieceManager
 
 
 class PurchaseManager:
 
     def __init__(self):
+        self.pieces = PieceManager()
 
-        self.db = Database(DATA_DIR / "purchases.json")
+    def add(self, product_id, quantity):
+
+        db.execute(
+            "INSERT INTO purchases (product_id, quantity) VALUES (?, ?)",
+            (product_id, quantity)
+        )
+
+        for _ in range(quantity):
+            self.pieces.add(product_id)
 
     def all(self):
 
-        return self.db.load()
-
-    def add(self, product_id, qty=1):
-
-        data = self.db.load()
-
-        for item in data:
-
-            if item["product_id"] == product_id:
-
-                item["qty"] += qty
-
-                self.db.save(data)
-
-                return
-
-        data.append({
-
-            "product_id": product_id,
-            "qty": qty
-
-        })
-
-        self.db.save(data)
+        return db.fetchall(
+            "SELECT * FROM purchases ORDER BY id DESC"
+        )

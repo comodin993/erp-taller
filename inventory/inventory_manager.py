@@ -1,21 +1,27 @@
-from core.database import Database
-from config import DATA_DIR
+from core.database import db
 
 
-class LocationManager:
-
-    def __init__(self):
-
-        self.db = Database(DATA_DIR / "locations.json")
+class ProductManager:
 
     def all(self):
+        return db.fetchall(
+            "SELECT * FROM products ORDER BY id DESC"
+        )
 
-        return self.db.load()
+    def create(self, name, brand, model):
+        db.execute(
+            "INSERT INTO products (name, brand, model) VALUES (?, ?, ?)",
+            (name, brand, model)
+        )
 
-    def add(self, name):
+    def delete(self, product_id):
+        db.execute(
+            "DELETE FROM products WHERE id = ?",
+            (product_id,)
+        )
 
-        data = self.db.load()
-
-        data.append(name)
-
-        self.db.save(data)
+    def get(self, product_id):
+        return db.fetchone(
+            "SELECT * FROM products WHERE id = ?",
+            (product_id,)
+        )

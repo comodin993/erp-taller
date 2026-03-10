@@ -1,44 +1,45 @@
-from core.database import Database
-from config import DATA_DIR
-import uuid
+from core.database import db
 
 
 class ProductManager:
 
     def __init__(self):
-        self.db = Database(DATA_DIR / "products.json")
+        pass
+
+    # -------------------------
 
     def all(self):
-        return self.db.load()
 
-    def create(self, name, brand, model, stock_min=1):
+        return db.fetchall(
+            "SELECT * FROM products ORDER BY id DESC"
+        )
 
-        products = self.db.load()
+    # -------------------------
 
-        product = {
+    def create(self, name, brand, model):
 
-            "id": str(uuid.uuid4()),
-            "name": name,
-            "brand": brand,
-            "model": model,
-            "barcode": "",
-            "stock_min": stock_min,
-            "price": 0
+        db.execute(
+            """
+            INSERT INTO products (name, brand, model)
+            VALUES (?, ?, ?)
+            """,
+            (name, brand, model)
+        )
 
-        }
-
-        products.append(product)
-
-        self.db.save(products)
-
-        return product
+    # -------------------------
 
     def get(self, product_id):
 
-        products = self.db.load()
+        return db.fetchone(
+            "SELECT * FROM products WHERE id = ?",
+            (product_id,)
+        )
 
-        for p in products:
+    # -------------------------
 
-            if p["id"] == product_id:
+    def delete(self, product_id):
 
-                return p
+        db.execute(
+            "DELETE FROM products WHERE id = ?",
+            (product_id,)
+        )

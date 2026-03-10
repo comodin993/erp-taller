@@ -25,5 +25,14 @@
         "barcode": "",
         "stock_min": 1,
         "price": 0
+    },
+    {
+        "id": "9ebf6631-1b1e-4dca-868b-b95e7362340c",
+        "name": "Samsung A10",
+        "brand": "Samsung",
+        "model": "A10",
+        "barcode": "",
+        "stock_min": 1,
+        "price": 0
     }
 ]

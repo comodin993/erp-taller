@@ -1,0 +1,55 @@
+{
+  "types": [
+    "Celular",
+    "Pantalla",
+    "Bateria",
+    "Placa",
+    "Camara",
+    "Parlante",
+    "Microfono",
+    "Flex",
+    "Conector de carga",
+    "Carcasa",
+    "Tapa",
+    "Chasis",
+    "Bandeja SIM",
+    "Coaxial",
+    "Boton",
+    "Auricular",
+    "Filtro parlante"
+  ],
+
+  "brands": {
+    "Celular": ["Samsung", "Motorola", "Xiaomi", "Huawei", "LG", "iPhone"],
+    "Pantalla": ["Samsung", "Motorola", "Xiaomi", "Huawei", "LG", "iPhone"],
+    "Bateria": ["Samsung", "Motorola", "Xiaomi", "Huawei", "LG"],
+    "Placa": ["Samsung", "Motorola", "Xiaomi", "Huawei", "LG", "iPhone"]
+  },
+
+  "models": {
+    "Samsung": ["A10", "A20", "A30", "A50", "A51", "A71", "S10", "S20"],
+    "Motorola": ["G6", "G7", "G8", "G9", "E6", "E7"],
+    "Xiaomi": ["Redmi 9", "Redmi 10", "Note 10", "Note 11"],
+    "Huawei": ["P20", "P30", "P40"],
+    "LG": ["K40", "K50"],
+    "iPhone": ["6", "7", "8", "X", "11", "12"]
+  },
+
+  "conditions": [
+    "Nuevo",
+    "Usado",
+    "Funcional",
+    "No verificado",
+    "Para reparar",
+    "No funcional",
+    "Para descarte"
+  ],
+
+  "locations": [
+    "Estanteria A",
+    "Estanteria B",
+    "Caja Pantallas",
+    "Caja Baterias",
+    "Laboratorio"
+  ]
+}

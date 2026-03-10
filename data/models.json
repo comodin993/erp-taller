@@ -1,0 +1,33 @@
+{
+"Samsung":[
+"A10","A10s","A11","A12","A13","A14",
+"A20","A20s","A21","A21s",
+"A30","A30s","A31",
+"A50","A51","A52","A53","A54",
+"A70","A71","A72","A73",
+"S8","S9","S10","S10e","S10+",
+"S20","S20 FE","S21","S21 FE","S22","S23",
+"Note 8","Note 9","Note 10","Note 20"
+],
+
+"Motorola":[
+"Moto G5","Moto G5 Plus",
+"Moto G6","Moto G6 Play","Moto G6 Plus",
+"Moto G7","Moto G7 Play","Moto G7 Power",
+"Moto G8","Moto G8 Play","Moto G8 Power",
+"Moto G9","Moto G9 Play","Moto G9 Power",
+"Moto G10","Moto G20","Moto G30",
+"Moto G50","Moto G60","Moto G70",
+"Moto Edge","Moto Edge 20"
+],
+
+"Xiaomi":[
+"Redmi 8","Redmi 8A",
+"Redmi 9","Redmi 9A","Redmi 9C",
+"Redmi 10","Redmi 10A",
+"Redmi Note 8","Redmi Note 9",
+"Redmi Note 10","Redmi Note 11",
+"Redmi Note 12",
+"Mi 9","Mi 10","Mi 11"
+]
+}

@@ -5,6 +5,7 @@ from ui.jobs_view import JobsView
 from ui.clients_view import ClientsView
 from ui.purchases_view import PurchasesView
 from ui.dashboard_view import DashboardView
+from ui.tasks_view import TasksView
 
 
 class MainWindow(QMainWindow):
@@ -22,5 +23,6 @@ class MainWindow(QMainWindow):
         tabs.addTab(JobsView(), "Trabajos")
         tabs.addTab(ClientsView(), "Clientes")
         tabs.addTab(PurchasesView(), "Compras")
+        tabs.addTab(TasksView(), "Trabajos")
 
         self.setCentralWidget(tabs)
