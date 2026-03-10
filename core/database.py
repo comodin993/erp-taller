@@ -114,6 +114,21 @@ class Database:
         )
         """)
 
+        # -----------------------------------------------------
+        # Tabla subtareas (pasos de cada trabajo)
+        cursor.execute("""
+        CREATE TABLE IF NOT EXISTS task_steps (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            task_id INTEGER,
+            type TEXT,                 -- material / action
+            description TEXT,
+            product_id INTEGER,
+            status TEXT DEFAULT 'pending',
+            FOREIGN KEY(task_id) REFERENCES tasks(id),
+            FOREIGN KEY(product_id) REFERENCES products(id)
+        )
+        """)
+
         self.conn.commit()
 
     # -----------------------------------------------------
